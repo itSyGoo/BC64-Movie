@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import { movieSer } from '../../../service/movieSer';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { movieSer } from "../../../service/movieSer";
+import { useNavigate } from "react-router-dom";
 
 const ListMoive = () => {
   const [dataMovieList, setDataMovieList] = useState();
@@ -11,7 +11,7 @@ const ListMoive = () => {
       let movieList = data.data.content;
       setDataMovieList(movieList);
     } catch (error) {
-      console.log('error: ', error);
+      console.log("error: ", error);
     }
   };
   useEffect(() => {
@@ -27,13 +27,14 @@ const ListMoive = () => {
     return dataMovieList?.map((movie) => {
       return (
         <div
+        
           onClick={() => {
             navigatePageDetail(movie.maPhim);
           }}
           key={movie.maPhim}
-          className="border rounded"
+          className="border rounded hover:cursor-pointer hover:shadow-xl  duration-300"
         >
-          <div className="h-96">
+          <div className="h-96 sm:h-72">
             <img
               src={movie.hinhAnh}
               className="w-full h-full object-cover rounded"
@@ -51,14 +52,14 @@ const ListMoive = () => {
     });
   };
   return (
-    <div className="container mx-auto py-5">
-      <h3 className="text-xl font-medium">Danh sách phim</h3>
+    <div className="container mx-auto py-5 space-y-5">
+      <h3 className="text-xl font-medium text-center">Danh sách phim</h3>
       {/* Danh sách phim */}
-      <div className="grid grid-cols-4 sm:grid-cols-1 gap-9">
+      <div class="grid grid-cols-3 md:grid-cols-2 xs:grid-cols-1 gap-9 mx-10">
+
         {/* card phim */}
         {renderListMovies()}
       </div>
- 
     </div>
   );
 };
