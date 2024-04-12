@@ -51,7 +51,7 @@ const RegisterPage = () => {
       <form
         onSubmit={formLogin.handleSubmit}
         action=""
-        className="border p-3 rounded-md space-y-3"
+        className="bg-slate-50 border p-3 rounded-md space-y-3 xs:mb-20"
       >
         <h3 className="text-2xl font-medium">Đăng ký</h3>
         <div>
@@ -132,7 +132,9 @@ const RegisterPage = () => {
           />
           <p className="text-red-500  h-3">{formLogin.errors.maNhom}</p>
         </div>
-        <button className="bg-blue-500 text-white rounded p-2 ">Đăng ký</button>
+        <button className="bg-blue-500 hover:bg-blue-700 duration-300 text-white rounded p-2 ">
+          Đăng ký
+        </button>
       </form>
     </div>
   );

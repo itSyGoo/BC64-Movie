@@ -1,7 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Carousel } from "antd";
 import { movieSer } from "../../../service/movieSer";
+import { IonIcon } from "@ionic/react";
 
+import { chevronBack, chevronForward } from "ionicons/icons";
 const CarouselMovie = () => {
   const [dataBan, setDataBan] = useState([]);
   const carouRef = useRef();
@@ -41,12 +43,12 @@ const CarouselMovie = () => {
         onClick={() => {
           carouRef.current.next();
         }}
-        className="bg-blue-500 p-2 rounded mx-3 absolute right-3 top-1/2 -translate-y-1/2 text-white"
+        className="absolute right-3 top-1/2 -translate-y-1/2 text-white text-5xl hover:text-blue-500 duration-300"
       >
-        Next
+        <IonIcon icon={chevronForward}></IonIcon>
       </button>
-      <button className="bg-blue-500 p-2 rounded mx-3 absolute left-3 top-1/2 -translate-y-1/2 text-white">
-        Pre
+      <button className="absolute left-3 top-1/2 -translate-y-1/2  text-white text-5xl hover:text-blue-500 duration-300">
+        <IonIcon icon={chevronBack}></IonIcon>
       </button>
     </div>
   );
